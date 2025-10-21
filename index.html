@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexiones (Réplica)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Conexiones</h1>
+    <p>Crea cuatro grupos de cuatro palabras.</p>
+
+    <div id="solved-container"></div>
+
+    <div id="grid-container"></div>
+
+    <div id="feedback-area"></div>
+
+    <div id="mistakes-container">
+        <span>Errores restantes:</span>
+        <div class="mistake-dot"></div>
+        <div class="mistake-dot"></div>
+        <div class="mistake-dot"></div>
+        <div class="mistake-dot"></div>
+    </div>
+
+    <div id="controls">
+        <button id="shuffle-button">Mezclar</button>
+        <button id="submit-button">Enviar</button>
+    </div>
+
+    <div id="modal" class="hidden">
+        <div id="modal-content">
+            <h2 id="modal-title"></h2>
+            <div id="modal-results"></div>
+            <button id="close-modal">Jugar de nuevo</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
