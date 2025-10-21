@@ -176,7 +176,7 @@ p {
 
 #submit-button {
     background-color: #121212;
-    color: black;
+    color: #000000;
 }
 
 #submit-button:disabled {
@@ -289,4 +289,5 @@ p {
         font-size: 0.9rem;
     }
 }
+
 
