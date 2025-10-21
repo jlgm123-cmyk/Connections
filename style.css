@@ -10,7 +10,6 @@ body {
     margin: 0;
     padding: 10px; 
     box-sizing: border-box;
-    /* Eliminado min-height: 100vh para permitir un ajuste fluido */
 }
 
 h1 {
@@ -27,7 +26,6 @@ p {
 #grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* 🔑 Global: Reducido de 10px a 8px */
     gap: 8px; 
     width: 100%; 
     max-width: 500px; 
@@ -36,7 +34,7 @@ p {
     margin-bottom: 20px;
 }
 
-/* Estilo base del recuadro */
+/* Estilo base del recuadro (Uniformidad y centrado) */
 .grid-item {
     background-color: #efefe6;
     border-radius: 8px;
@@ -51,9 +49,9 @@ p {
     text-transform: uppercase;
     
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
+    align-items: center; /* Centrado Vertical */
+    justify-content: center; /* Centrado Horizontal */
+    text-align: center; /* Centrado de texto multilínea */
     
     white-space: normal; 
     overflow-wrap: break-word; 
@@ -61,11 +59,11 @@ p {
     
     line-height: 1.2;
     
-    aspect-ratio: 4 / 3; 
+    aspect-ratio: 4 / 3; /* Uniformidad de tamaño */
     min-height: 50px; 
 }
 
-/* Clase para reducir la fuente (aplicada por JS) */
+/* Clase para reducir la fuente (aplicada por JS a palabras largas) */
 .grid-item.shrink-text {
     font-size: 0.7rem; 
     line-height: 1.1;
@@ -76,6 +74,10 @@ p {
     background-color: #5a5a5a;
     color: white;
     transform: scale(0.95);
+}
+
+.grid-item.hidden {
+    display: none !important;
 }
 
 /* Contenedor de grupos resueltos */
@@ -174,15 +176,18 @@ p {
     background-color: #efefe6;
 }
 
+/* Estado ACTIVO: Fondo CLARO, Texto NEGRO (SOLUCIÓN FINAL) */
 #submit-button {
-    background-color: #121212;
-    color: #000000;
+    background-color: #f9df6d; 
+    color: #121212; 
+    border-color: #f9df6d; 
 }
 
+/* Estado INACTIVO */
 #submit-button:disabled {
     background-color: #dcdcdc;
+    color: #888888;          
     border-color: #dcdcdc;
-    color: #888;
     cursor: not-allowed;
 }
 
@@ -236,9 +241,8 @@ p {
     cursor: pointer;
 }
 
-/* 🚀 AJUSTES ULTRA-COMPACTOS PARA MÓVILES */
+/* AJUSTES ULTRA-COMPACTOS PARA MÓVILES */
 @media (max-width: 550px) {
-    /* 🔑 Reducción de espaciado y fuente del encabezado */
     h1 {
         font-size: 1.6rem;
     }
@@ -246,24 +250,21 @@ p {
         margin-bottom: 10px;
     }
 
-    /* 🔑 La cuadrícula es más ancha y baja (relación 5/3) */
     #grid-container {
-        gap: 6px; /* Aún menos espacio entre celdas */
-        margin-bottom: 10px; /* Reducir margen inferior */
+        gap: 6px; 
+        margin-bottom: 10px; 
     }
     
-    /* 🔑 Ajuste de los recuadros */
     .grid-item {
         aspect-ratio: 5 / 3; 
-        font-size: 0.85rem; /* Fuente base pequeña */
-        padding: 5px 3px; /* Mínimo padding vertical y horizontal */
+        font-size: 0.85rem; 
+        padding: 5px 3px; 
     }
 
     .grid-item.shrink-text {
-        font-size: 0.6rem; /* Fuente súper pequeña para palabras largas */
+        font-size: 0.6rem; 
     }
     
-    /* 🔑 Elementos de control y feedback más pequeños */
     #feedback-area {
         margin-bottom: 10px;
         font-size: 1rem;
@@ -274,7 +275,6 @@ p {
         margin-bottom: 10px;
     }
     
-    /* 🔑 Botones muy compactos */
     #controls {
         gap: 10px;
     }
@@ -283,11 +283,8 @@ p {
         font-size: 0.8rem;
     }
 
-    /* 🔑 Grupos resueltos compactos */
     .solved-group {
         padding: 8px;
         font-size: 0.9rem;
     }
 }
-
-
