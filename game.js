@@ -2,11 +2,11 @@
 const ALL_PUZZLES = [
     
     // --- Dificultad 0 (Amarillo) ---
-    { "category": "Instrumentos de Cuerda", "words": ["Laura", "Violín", "Arpa", "Ukelele"], "difficulty": 0, "color": "yellow" },
-    { "category": "Sinónimos de 'Fácil'", "words": ["Laura", "Sencillo", "Elemental", "Básico"], "difficulty": 0, "color": "yellow" },
-    { "category": "Verbos de Movimiento", "words": ["Laura", "Saltar", "Caminar", "Volar"], "difficulty": 0, "color": "yellow" },
-    { "category": "Partes de la Cara", "words": ["Laura", "Boca", "Ojo", "Oreja"], "difficulty": 0, "color": "yellow" },
-    { "category": "Unidades de Tiempo", "words": ["Laura", "Minuto", "Hora", "Día"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que es Laura", "words": ["Niña Linda", "Princesa", "Bonita", "Hermosa"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que es Laura", "words": ["Preciosa", "Princesa", "Bella", "Inteligente"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que es Laura", "words": ["Increible", "Maravillosa", "Princesa", "Linda"], "difficulty": 0, "color": "yellow" },
+    { "category": "Lo más bonito de Laura", "words": ["Pelo", "Boca", "Manos", "Sonrisa"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que es Laura", "words": ["Pasada", "Extrovertida", "Divertida", "Guapa"], "difficulty": 0, "color": "yellow" },
     { "category": "Tipos de Café", "words": ["Laura", "Latte", "Capuchino", "Americano"], "difficulty": 0, "color": "yellow" },
     { "category": "Colores Primarios", "words": ["Laura", "Azul", "Amarillo", "Verde"], "difficulty": 0, "color": "yellow" },
     { "category": "Animales Domésticos", "words": ["Laura", "Gato", "Hámster", "Conejo"], "difficulty": 0, "color": "yellow" },
@@ -349,4 +349,5 @@ function shuffleArray(array) {
     }
     return array;
 }
+
 
