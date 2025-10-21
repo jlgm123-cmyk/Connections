@@ -1,5 +1,4 @@
-// --- DATOS DEL PUZZLE (Ahora incrustados en JS, sin necesidad de fetch) ---
-// Define todos los puzzles aquí. El juego seleccionará uno aleatoriamente.
+// --- DATOS DEL PUZZLE (Incrustados en JS) ---
 const ALL_PUZZLES = [
     
     // --- Dificultad 0 (Amarillo) ---
@@ -74,10 +73,9 @@ const closeModalButton = document.getElementById('close-modal');
 document.addEventListener('DOMContentLoaded', initializeGame);
 
 function initializeGame() {
-    // 1. Seleccionar el puzzle de la lista incrustada
+    // 1. Seleccionar el puzzle
     currentPuzzle = selectRandomPuzzle();
     
-    // Si no se pudo seleccionar (si faltan dificultades)
     if (!currentPuzzle || currentPuzzle.groups.length !== 4) {
         gridContainer.innerHTML = '<div style="color: red; padding: 20px; text-align: center;">\
             <h3>ERROR DE CONFIGURACIÓN</h3>\
@@ -109,32 +107,53 @@ function initializeGame() {
         item.addEventListener('click', () => onItemClick(item));
         gridContainer.appendChild(item);
     });
+
+    // 🔑 LLAMADA CLAVE: Aplicar la reducción de fuente después de crear los elementos
+    applyTextScaling(); 
 }
 
-// --- LÓGICA DE SELECCIÓN ALEATORIA (Modificada para usar la variable JS) ---
+// --- LÓGICA DE REDUCCIÓN DE FUENTE (NUEVA FUNCIÓN) ---
+
+function applyTextScaling() {
+    const gridItems = gridContainer.querySelectorAll('.grid-item');
+
+    gridItems.forEach(item => {
+        const word = item.textContent.toUpperCase();
+        
+        // 🔑 Definimos un umbral: si la palabra tiene 11 caracteres o más
+        // o si tiene 3 o más palabras (contando espacios como separador)
+        const isLongWord = word.length >= 11;
+        const hasManyWords = word.split(' ').length >= 3;
+        
+        if (isLongWord || hasManyWords) {
+            item.classList.add('shrink-text');
+        }
+    });
+
+    // Se puede refinar este umbral (ej. 14 para palabras sin espacios, 11 para frases)
+    // Para palabras como "Destornillador" (14), se aplicará la reducción.
+    // Para palabras como "Master Chief" (2), se aplicará la reducción si tiene 3 o más palabras.
+}
+
+// --- LÓGICA DE SELECCIÓN Y JUEGO (Resto de funciones sin cambios) ---
 
 function selectRandomPuzzle() {
     const selectedGroups = [];
 
-    // Seleccionar un grupo aleatorio para cada dificultad (0 a 3)
     for (let i = 0; i < 4; i++) {
-        // Filtrar los puzzles por la dificultad actual (i)
         const difficultyPuzzles = ALL_PUZZLES.filter(p => p.difficulty === i);
         
         if (difficultyPuzzles.length === 0) {
             console.error(`Faltan categorías en ALL_PUZZLES: No hay puzzles para la dificultad ${i}.`);
-            return null; // Fallo si falta alguna dificultad
+            return null; 
         }
         
-        // Elegir uno aleatoriamente
         const randomIndex = Math.floor(Math.random() * difficultyPuzzles.length);
         selectedGroups.push(difficultyPuzzles[randomIndex]);
     }
     
     return { groups: selectedGroups };
 }
-
-// --- RESTO DE LA LÓGICA DEL JUEGO (sin cambios funcionales) ---
 
 function onItemClick(item) {
     const word = item.textContent;
@@ -278,6 +297,7 @@ function shuffleGrid() {
 
     gridContainer.innerHTML = '';
     shuffledActiveItems.forEach(item => gridContainer.appendChild(item));
+    // Es importante re-aplicar la escala al reordenar si el tamaño dependiera del ancho (pero con grid no es necesario)
 }
 
 function endGame(won) {
