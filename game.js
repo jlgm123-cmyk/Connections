@@ -10,8 +10,9 @@ const ALL_PUZZLES = [
     { "category": "Cosas que Jorge quiere hacer con Laura", "words": ["Besar", "Abrazar", "Conversar", "Mirar"], "difficulty": 0, "color": "yellow" },
     { "category": "Cosas que le gustan a Laura", "words": ["Cerveza", "Margarita", "Jorge", "Piña Colada"], "difficulty": 0, "color": "yellow" },
     { "category": "Cosas que le gustan a Laura", "words": ["Pilates", "Beber", "Sushi", "Flores"], "difficulty": 0, "color": "yellow" },
-    { "category": "Cosas que no le gustan a Laura", "words": ["Coco", "Guanábana", "Correr", "Besos en el codo"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que NO le gustan a Laura", "words": ["Coco", "Guanábana", "Correr", "Vallenato"], "difficulty": 0, "color": "yellow" },
     { "category": "Cosas que NO es Laura", "words": ["Horrible", "Plebeya", "Vulgar", "Común"], "difficulty": 0, "color": "yellow" },
+
     
     // --- Dificultad 1 (Verde) ---
     { "category": "Soundtrack de tu y yo", "words": ["Fuego", "Tan Bien", "Estar Contigo", "Tanto"], "difficulty": 1, "color": "green" },
@@ -19,14 +20,15 @@ const ALL_PUZZLES = [
     { "category": "Soundtrack de tu y yo", "words": ["Pelinegra", "El Ingeniero", "Carita Linda", "Magic"], "difficulty": 1, "color": "green" },
     { "category": "Soundtrack de tu y yo", "words": ["Bésame", "Las Estrellas", "Espacio Sideral", "Tears"], "difficulty": 1, "color": "green" },
     { "category": "La persona favorita de Jorge", "words": ["Laura", "Laura", "Laura", "Laura"], "difficulty": 1, "color": "green" },
-    { "category": "Tipos de Energía", "words": ["Eólica", "Solar", "Nuclear", "Hidráulica"], "difficulty": 1, "color": "green" },
-    { "category": "Elementos de la Tabla Periódica (metales)", "words": ["Oro", "Plata", "Cobre", "Hierro"], "difficulty": 1, "color": "green" },
-    { "category": "Profesiones del Arte", "words": ["Pintor", "Escultor", "Músico", "Dramaturgo"], "difficulty": 1, "color": "green" },
-    { "category": "Animales que Hibernan", "words": ["Oso", "Marmota", "Erizo", "Murciélago"], "difficulty": 1, "color": "green" },
-    { "category": "Tipos de Nubes", "words": ["Cirro", "Estrato", "Cúmulo", "Nimbo"], "difficulty": 1, "color": "green" },
+    { "category": "Comidas favoritas de Jorge", "words": ["Sopa", "Piña", "Hamburguesa", "Laura"], "difficulty": 1, "color": "green" },
+    { "category": "Mascota de Racha", "words": ["Filadelfio", "Margarito", "Tik Tok", "Cabillo"], "difficulty": 1, "color": "green" },
+    { "category": "IOI", "words": ["Odoo", "Proyectos", "Partidas", "Presupuestos"], "difficulty": 1, "color": "green" },
+    { "category": "Maya", "words": ["Mayonesa", "Gorda Bachicha", "Mayúscula", "Maya"], "difficulty": 1, "color": "green" },
+    { "category": "Apodos de Laura en Anagrama", "words": ["Roma", "Haremos", "Escarpio", "Nidal"], "difficulty": 1, "color": "green" },
+    { "category": "Te Amo Laura Emilia", "words": ["Te", "Amo", "Laura", "Emilia"], "difficulty": 1, "color": "green" },
     
     // --- Dificultad 2 (Azul) ---
-    { "category": "Maya", "words": ["Mayonesa", "Gorda Bachicha", "Mayúscula", "Maya"], "difficulty": 2, "color": "blue" },
+    { "category": "Canciones por categoría", "words": ["Love Someone", "Todo Cambió", "Mala Conducta", "La travesía"], "difficulty": 2, "color": "blue" },
     { "category": "Citas en palabras clave", "words": ["Sushi", "Novia", "Karaoke", "Papas Fritas"], "difficulty": 2, "color": "blue" },
     { "category": "Tipos de Sustancias", "words": ["Gas", "Líquido", "Sólido", "Plasma"], "difficulty": 2, "color": "blue" },
     { "category": "Términos de Ajedrez", "words": ["Peón", "Torre", "Caballo", "Alfil"], "difficulty": 2, "color": "blue" },
@@ -38,7 +40,7 @@ const ALL_PUZZLES = [
     { "category": "Peces Comunes", "words": ["Salmón", "Atún", "Merluza", "Tilapia"], "difficulty": 2, "color": "blue" },
     
     // --- Dificultad 3 (Morado) ---
-    { "category": "Capitales con 5 Letras", "words": ["Lima", "Oslo", "Tokio", "París"], "difficulty": 3, "color": "purple" },
+    { "category": "", "words": ["Lima", "Oslo", "Tokio", "París"], "difficulty": 3, "color": "purple" },
     { "category": "Palabras que son Palíndromos", "words": ["Radar", "Sometemos", "Reconocer", "Ataque"], "difficulty": 3, "color": "purple" },
     { "category": "Artistas del Renacimiento (Tortugas Ninja)", "words": ["Rafael", "Miguel Ángel", "Leonardo", "Donatello"], "difficulty": 3, "color": "purple" },
     { "category": "Unidades de Medida Antiguas", "words": ["Codo", "Pie", "Pulgada", "Braza"], "difficulty": 3, "color": "purple" },
@@ -349,6 +351,7 @@ function shuffleArray(array) {
     }
     return array;
 }
+
 
 
 
