@@ -8,10 +8,10 @@ const ALL_PUZZLES = [
     { "category": "Lo más bonito de Laura", "words": ["Pelo", "Boca", "Manos", "Sonrisa"], "difficulty": 0, "color": "yellow" },
     { "category": "Cosas que es Laura", "words": ["Pasada", "Extrovertida", "Divertida", "Consentida"], "difficulty": 0, "color": "yellow" },
     { "category": "Cosas que Jorge quiere hacer con Laura", "words": ["Besar", "Abrazar", "Conversar", "Mirar"], "difficulty": 0, "color": "yellow" },
-    { "category": "Colores Primarios", "words": ["Laura", "Azul", "Amarillo", "Verde"], "difficulty": 0, "color": "yellow" },
-    { "category": "Animales Domésticos", "words": ["Laura", "Gato", "Hámster", "Conejo"], "difficulty": 0, "color": "yellow" },
-    { "category": "Términos de Cocina", "words": ["Laura", "Asar", "Rehogar", "Freír"], "difficulty": 0, "color": "yellow" },
-    { "category": "Herramientas Básicas", "words": ["Laura", "Clavo", "Tornillo", "Destornillador"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que le gustan a Laura", "words": ["Cerveza", "Margarita", "Jorge", "Piña Colada"], "difficulty": 0, "color": "yellow" },
+    { "category": "Animales Domésticos", "words": ["Lauraa", "Gato", "Hámster", "Conejo"], "difficulty": 0, "color": "yellow" },
+    { "category": "Términos de Cocina", "words": ["Lauraa", "Asar", "Rehogar", "Freír"], "difficulty": 0, "color": "yellow" },
+    { "category": "Herramientas Básicas", "words": ["Lauraa", "Clavo", "Tornillo", "Destornillador"], "difficulty": 0, "color": "yellow" },
     
     // --- Dificultad 1 (Verde) ---
     { "category": "Mamíferos Grandes", "words": ["Elefante", "Ballena", "Rinoceronte", "Hipopótamo"], "difficulty": 1, "color": "green" },
@@ -349,6 +349,7 @@ function shuffleArray(array) {
     }
     return array;
 }
+
 
 
 
