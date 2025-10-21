@@ -26,6 +26,7 @@ const ALL_PUZZLES = [
     { "category": "Maya", "words": ["Mayonesa", "Gorda Bachicha", "Mayúscula", "Maya"], "difficulty": 1, "color": "green" },
     { "category": "Apodos de Laura en Anagrama", "words": ["Roma", "Haremos", "Escarpio", "Nidal"], "difficulty": 1, "color": "green" },
     { "category": "Te Amo Laura Emilia", "words": ["Te", "Amo", "Laura", "Emilia"], "difficulty": 1, "color": "green" },
+
     
     // --- Dificultad 2 (Azul) ---
     { "category": "Canciones por categoría", "words": ["Love Someone", "Todo Cambió", "Mala Conducta", "La travesía"], "difficulty": 2, "color": "blue" },
@@ -40,7 +41,7 @@ const ALL_PUZZLES = [
     { "category": "Peces Comunes", "words": ["Salmón", "Atún", "Merluza", "Tilapia"], "difficulty": 2, "color": "blue" },
     
     // --- Dificultad 3 (Morado) ---
-    { "category": "", "words": ["Lima", "Oslo", "Tokio", "París"], "difficulty": 3, "color": "purple" },
+    { "category": "Laura le sabe y Jorge no", "words": ["Bailar", "Oslo", "Tokio", "París"], "difficulty": 3, "color": "purple" },
     { "category": "Palabras que son Palíndromos", "words": ["Radar", "Sometemos", "Reconocer", "Ataque"], "difficulty": 3, "color": "purple" },
     { "category": "Artistas del Renacimiento (Tortugas Ninja)", "words": ["Rafael", "Miguel Ángel", "Leonardo", "Donatello"], "difficulty": 3, "color": "purple" },
     { "category": "Unidades de Medida Antiguas", "words": ["Codo", "Pie", "Pulgada", "Braza"], "difficulty": 3, "color": "purple" },
@@ -351,6 +352,7 @@ function shuffleArray(array) {
     }
     return array;
 }
+
 
 
 
