@@ -11,6 +11,13 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
+
+    /* 🔑 AJUSTE CLAVE 1: Activar la separación por guiones */
+    hyphens: auto; 
+    /* Necesario para que funcione hyphens: auto */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphenate-limit-chars: 6 3 2; /* Reglas para la separación de palabras */
 }
 
 h1 {
@@ -23,7 +30,7 @@ p {
     margin-bottom: 20px;
 }
 
-/* Contenedor de la cuadrícula (Ajustado para mejor centrado general) */
+/* Contenedor de la cuadrícula */
 #grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -37,9 +44,8 @@ p {
 .grid-item {
     background-color: #efefe6;
     border-radius: 8px;
-    padding: 10px 5px; /* Reducción de padding horizontal para dar más espacio al texto */
+    padding: 10px 5px; 
     
-    /* 🔑 Tamaño de fuente más pequeño para acomodar palabras largas */
     font-size: 0.85rem; 
     font-weight: 600;
     
@@ -50,21 +56,22 @@ p {
     
     /* Centrado y Formato de Texto */
     display: flex;
-    align-items: center; /* Centrado vertical */
-    justify-content: center; /* Centrado horizontal (bloque) */
-    text-align: center; /* Centrado del texto multilínea */
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
     
-    /* 🔑 Asegurar que el texto se envuelve y rompe si es necesario */
     white-space: normal; 
-    word-wrap: break-word; /* Soporte más amplio para romper palabras */
-    word-break: break-word; 
+    word-wrap: break-word; 
+    /* ❌ ELIMINAMOS word-break: break-word; para evitar la ruptura fea */
+    
     line-height: 1.2;
     
-    /* 🔑 Uniformidad de tamaño forzada */
+    /* Uniformidad de tamaño forzada */
     aspect-ratio: 4 / 3; 
-    
-    /* 🔑 Altura mínima para prevenir colapsos con muy poco texto */
     min-height: 50px; 
+
+    /* 🔑 AJUSTE CLAVE 2: Permitir la separación por guiones en el elemento */
+    hyphens: auto;
 }
 
 /* Estilo de palabra seleccionada */
@@ -74,7 +81,7 @@ p {
     transform: scale(0.95);
 }
 
-/* Contenedor de grupos resueltos */
+/* Contenedor de grupos resueltos (sin cambios) */
 #solved-container {
     width: 100%;
     max-width: 500px;
@@ -105,7 +112,7 @@ p {
     text-transform: uppercase;
 }
 
-/* Colores de dificultad (idénticos a NYT) */
+/* Colores de dificultad */
 .difficulty-yellow { background-color: #f9df6d; color: #121212; }
 .difficulty-green { background-color: #a0c35a; color: #121212; }
 .difficulty-blue { background-color: #b0c4ef; color: #121212; }
@@ -122,7 +129,7 @@ p {
     }
 }
 
-/* Feedback (¡A una!) */
+/* Feedback (sin cambios) */
 #feedback-area {
     height: 20px;
     margin-bottom: 15px;
@@ -130,7 +137,7 @@ p {
     font-size: 1.1rem;
 }
 
-/* Errores restantes */
+/* Errores restantes (sin cambios) */
 #mistakes-container {
     display: flex;
     align-items: center;
@@ -149,7 +156,7 @@ p {
     background-color: #dcdcdc;
 }
 
-/* Botones */
+/* Botones (sin cambios) */
 #controls {
     display: flex;
     gap: 15px;
@@ -182,7 +189,7 @@ p {
     cursor: not-allowed;
 }
 
-/* Modal de resultados (Victoria/Derrota) */
+/* Modal de resultados (sin cambios) */
 .hidden {
     display: none !important;
 }
@@ -232,7 +239,7 @@ p {
     cursor: pointer;
 }
 
-/* Estilos para pantallas más pequeñas */
+/* Estilos para pantallas más pequeñas (sin cambios) */
 @media (max-width: 550px) {
     #grid-container {
         max-width: 100%;
