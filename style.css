@@ -23,7 +23,7 @@ p {
     margin-bottom: 20px;
 }
 
-/* Contenedor de la cuadrícula */
+/* Contenedor de la cuadrícula (Ajustado para mejor centrado general) */
 #grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -33,14 +33,14 @@ p {
     margin-bottom: 20px;
 }
 
-/* 🚀 AJUSTE CLAVE: Estilo de cada palabra (el recuadro) */
+/* 🔑 AJUSTE CRÍTICO: Estilo de cada palabra (el recuadro) */
 .grid-item {
     background-color: #efefe6;
     border-radius: 8px;
-    padding: 10px;
+    padding: 10px 5px; /* Reducción de padding horizontal para dar más espacio al texto */
     
-    /* 🔑 Tamaño de fuente ligeramente reducido para acomodar palabras largas */
-    font-size: 0.9rem; 
+    /* 🔑 Tamaño de fuente más pequeño para acomodar palabras largas */
+    font-size: 0.85rem; 
     font-weight: 600;
     
     cursor: pointer;
@@ -48,17 +48,23 @@ p {
     transition: background-color 0.2s, transform 0.1s;
     text-transform: uppercase;
     
-    /* 🔑 Propiedades de Centrado y Formato de Texto */
+    /* Centrado y Formato de Texto */
     display: flex;
     align-items: center; /* Centrado vertical */
     justify-content: center; /* Centrado horizontal (bloque) */
     text-align: center; /* Centrado del texto multilínea */
-    white-space: normal; /* Permite que el texto se separe en varias líneas si tiene espacios */
-    word-break: break-word; /* Rompe palabras individuales muy largas si no caben */
+    
+    /* 🔑 Asegurar que el texto se envuelve y rompe si es necesario */
+    white-space: normal; 
+    word-wrap: break-word; /* Soporte más amplio para romper palabras */
+    word-break: break-word; 
     line-height: 1.2;
     
-    /* Uniformidad de tamaño */
+    /* 🔑 Uniformidad de tamaño forzada */
     aspect-ratio: 4 / 3; 
+    
+    /* 🔑 Altura mínima para prevenir colapsos con muy poco texto */
+    min-height: 50px; 
 }
 
 /* Estilo de palabra seleccionada */
