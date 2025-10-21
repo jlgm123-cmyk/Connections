@@ -6,8 +6,8 @@ const ALL_PUZZLES = [
     { "category": "Cosas que es Laura", "words": ["Preciosa", "Princesa", "Bella", "Inteligente"], "difficulty": 0, "color": "yellow" },
     { "category": "Cosas que es Laura", "words": ["Increible", "Maravillosa", "Princesa", "Linda"], "difficulty": 0, "color": "yellow" },
     { "category": "Lo más bonito de Laura", "words": ["Pelo", "Boca", "Manos", "Sonrisa"], "difficulty": 0, "color": "yellow" },
-    { "category": "Cosas que es Laura", "words": ["Pasada", "Extrovertida", "Divertida", "Guapa"], "difficulty": 0, "color": "yellow" },
-    { "category": "Tipos de Café", "words": ["Laura", "Latte", "Capuchino", "Americano"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que es Laura", "words": ["Pasada", "Extrovertida", "Divertida", "Consentida"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que Jorge quiere hacer con Laura", "words": ["Besar", "Abrazar", "Conversar", "Mirar"], "difficulty": 0, "color": "yellow" },
     { "category": "Colores Primarios", "words": ["Laura", "Azul", "Amarillo", "Verde"], "difficulty": 0, "color": "yellow" },
     { "category": "Animales Domésticos", "words": ["Laura", "Gato", "Hámster", "Conejo"], "difficulty": 0, "color": "yellow" },
     { "category": "Términos de Cocina", "words": ["Laura", "Asar", "Rehogar", "Freír"], "difficulty": 0, "color": "yellow" },
@@ -349,5 +349,6 @@ function shuffleArray(array) {
     }
     return array;
 }
+
 
 
