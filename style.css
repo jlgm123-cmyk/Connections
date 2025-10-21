@@ -11,13 +11,7 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
-
-    /* 🔑 AJUSTE CLAVE 1: Activar la separación por guiones */
-    hyphens: auto; 
-    /* Necesario para que funcione hyphens: auto */
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphenate-limit-chars: 6 3 2; /* Reglas para la separación de palabras */
+    /* Eliminamos hyphens */
 }
 
 h1 {
@@ -40,13 +34,13 @@ p {
     margin-bottom: 20px;
 }
 
-/* 🔑 AJUSTE CRÍTICO: Estilo de cada palabra (el recuadro) */
+/* 🔑 AJUSTE CLAVE 1: Estilo base del recuadro */
 .grid-item {
     background-color: #efefe6;
     border-radius: 8px;
     padding: 10px 5px; 
     
-    font-size: 0.85rem; 
+    font-size: 0.95rem; /* Fuente base */
     font-weight: 600;
     
     cursor: pointer;
@@ -60,28 +54,31 @@ p {
     justify-content: center; 
     text-align: center; 
     
-    white-space: normal; 
-    word-wrap: break-word; 
-    /* ❌ ELIMINAMOS word-break: break-word; para evitar la ruptura fea */
+    white-space: normal; /* Permite salto de línea en espacios */
+    overflow-wrap: break-word; /* Rompe palabras solo como último recurso */
+    word-break: normal; /* Aseguramos que no se fuerce la rotura */
     
     line-height: 1.2;
     
     /* Uniformidad de tamaño forzada */
     aspect-ratio: 4 / 3; 
     min-height: 50px; 
-
-    /* 🔑 AJUSTE CLAVE 2: Permitir la separación por guiones en el elemento */
-    hyphens: auto;
 }
 
-/* Estilo de palabra seleccionada */
+/* 🔑 AJUSTE CLAVE 2: Nueva clase CSS para reducir la fuente */
+.grid-item.shrink-text {
+    font-size: 0.7rem; /* Reducimos la fuente para texto más largo */
+    line-height: 1.1;
+}
+
+/* Estilo de palabra seleccionada (resto del CSS sin cambios funcionales) */
 .grid-item.selected {
     background-color: #5a5a5a;
     color: white;
     transform: scale(0.95);
 }
 
-/* Contenedor de grupos resueltos (sin cambios) */
+/* Contenedor de grupos resueltos */
 #solved-container {
     width: 100%;
     max-width: 500px;
@@ -129,7 +126,7 @@ p {
     }
 }
 
-/* Feedback (sin cambios) */
+/* Feedback */
 #feedback-area {
     height: 20px;
     margin-bottom: 15px;
@@ -137,7 +134,7 @@ p {
     font-size: 1.1rem;
 }
 
-/* Errores restantes (sin cambios) */
+/* Errores restantes */
 #mistakes-container {
     display: flex;
     align-items: center;
@@ -156,7 +153,7 @@ p {
     background-color: #dcdcdc;
 }
 
-/* Botones (sin cambios) */
+/* Botones */
 #controls {
     display: flex;
     gap: 15px;
@@ -189,7 +186,7 @@ p {
     cursor: not-allowed;
 }
 
-/* Modal de resultados (sin cambios) */
+/* Modal de resultados */
 .hidden {
     display: none !important;
 }
@@ -239,7 +236,7 @@ p {
     cursor: pointer;
 }
 
-/* Estilos para pantallas más pequeñas (sin cambios) */
+/* Estilos para pantallas más pequeñas */
 @media (max-width: 550px) {
     #grid-container {
         max-width: 100%;
