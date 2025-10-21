@@ -5,12 +5,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Eliminamos min-height: 100vh para que el contenido se ajuste sin forzar scroll si cabe */
     background-color: #f9f9f9;
     color: #121212;
     margin: 0;
     padding: 10px; 
     box-sizing: border-box;
+    /* Eliminado min-height: 100vh para permitir un ajuste fluido */
 }
 
 h1 {
@@ -27,7 +27,8 @@ p {
 #grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    /* 🔑 Global: Reducido de 10px a 8px */
+    gap: 8px; 
     width: 100%; 
     max-width: 500px; 
     margin-left: auto; 
@@ -41,7 +42,7 @@ p {
     border-radius: 8px;
     padding: 10px 5px; 
     
-    font-size: 0.95rem; /* Fuente base */
+    font-size: 0.95rem; 
     font-weight: 600;
     
     cursor: pointer;
@@ -60,7 +61,7 @@ p {
     
     line-height: 1.2;
     
-    aspect-ratio: 4 / 3; /* Relación de aspecto estándar para uniformidad */
+    aspect-ratio: 4 / 3; 
     min-height: 50px; 
 }
 
@@ -235,45 +236,56 @@ p {
     cursor: pointer;
 }
 
-/* 🚀 AJUSTES CRÍTICOS PARA MÓVILES */
+/* 🚀 AJUSTES ULTRA-COMPACTOS PARA MÓVILES */
 @media (max-width: 550px) {
-    /* 🔑 Reducir la fuente del título y la introducción */
+    /* 🔑 Reducción de espaciado y fuente del encabezado */
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+    p {
+        margin-bottom: 10px;
+    }
+
+    /* 🔑 La cuadrícula es más ancha y baja (relación 5/3) */
+    #grid-container {
+        gap: 6px; /* Aún menos espacio entre celdas */
+        margin-bottom: 10px; /* Reducir margen inferior */
     }
     
-    /* 🔑 Reducir el espaciado general */
+    /* 🔑 Ajuste de los recuadros */
     .grid-item {
-        gap: 8px; /* Reducir el espacio entre las celdas */
-        aspect-ratio: 5 / 3; /* Hacer los recuadros más horizontales */
-        font-size: 0.9rem; /* Reducir la fuente base un poco más */
+        aspect-ratio: 5 / 3; 
+        font-size: 0.85rem; /* Fuente base pequeña */
+        padding: 5px 3px; /* Mínimo padding vertical y horizontal */
     }
 
     .grid-item.shrink-text {
-        font-size: 0.65rem; /* Reducir más la fuente de las palabras largas */
+        font-size: 0.6rem; /* Fuente súper pequeña para palabras largas */
     }
     
-    /* 🔑 Botones más compactos */
-    #controls button {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-
-    /* 🔑 Reducir el tamaño de los puntos de error */
-    .mistake-dot {
-        width: 15px;
+    /* 🔑 Elementos de control y feedback más pequeños */
+    #feedback-area {
+        margin-bottom: 10px;
+        font-size: 1rem;
         height: 15px;
     }
-    
-    /* Aseguramos que el contenedor se ajuste */
-    #grid-container,
-    #solved-container {
-        max-width: 100%;
-        gap: 8px;
+
+    #mistakes-container {
+        margin-bottom: 10px;
     }
     
-    /* Reducir el padding de los grupos resueltos */
+    /* 🔑 Botones muy compactos */
+    #controls {
+        gap: 10px;
+    }
+    #controls button {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* 🔑 Grupos resueltos compactos */
     .solved-group {
-        padding: 12px;
+        padding: 8px;
+        font-size: 0.9rem;
     }
 }
