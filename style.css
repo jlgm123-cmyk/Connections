@@ -23,42 +23,42 @@ p {
     margin-bottom: 20px;
 }
 
-/* 🔄 AJUSTE CLAVE 1: Contenedor de la cuadrícula */
+/* Contenedor de la cuadrícula */
 #grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    /* 🔑 Se fija un ancho máximo para centrarlo y asegurar uniformidad */
     width: 100%;
     max-width: 500px; 
     margin-bottom: 20px;
 }
 
-/* 🔄 AJUSTE CLAVE 2: Estilo de cada palabra (el recuadro) */
+/* 🚀 AJUSTE CLAVE: Estilo de cada palabra (el recuadro) */
 .grid-item {
     background-color: #efefe6;
     border-radius: 8px;
-    padding: 10px; /* Reducimos el padding para mejorar el ajuste */
-    font-size: 1rem;
+    padding: 10px;
+    
+    /* 🔑 Tamaño de fuente ligeramente reducido para acomodar palabras largas */
+    font-size: 0.9rem; 
     font-weight: 600;
-    text-align: center;
+    
     cursor: pointer;
     user-select: none;
     transition: background-color 0.2s, transform 0.1s;
     text-transform: uppercase;
     
-    /* 🔑 Hacemos que el recuadro sea un Flexbox para centrar el texto verticalmente */
+    /* 🔑 Propiedades de Centrado y Formato de Texto */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* 🔑 Usamos la propiedad aspect-ratio para forzar que todos los recuadros sean cuadrados (1/1) o rectangulares uniformes (4/3) */
-    /* Usaremos 4 / 3 (ancho / alto) para que sea un rectángulo ligeramente más alto que el original */
-    aspect-ratio: 4 / 3; 
-    
-    /* 🔑 Forzamos el salto de línea para que palabras largas no estiren el recuadro */
-    word-break: break-word;
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal (bloque) */
+    text-align: center; /* Centrado del texto multilínea */
+    white-space: normal; /* Permite que el texto se separe en varias líneas si tiene espacios */
+    word-break: break-word; /* Rompe palabras individuales muy largas si no caben */
     line-height: 1.2;
+    
+    /* Uniformidad de tamaño */
+    aspect-ratio: 4 / 3; 
 }
 
 /* Estilo de palabra seleccionada */
@@ -229,7 +229,6 @@ p {
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 550px) {
     #grid-container {
-        /* Permite que el contenedor se ajuste mejor a pantallas pequeñas */
         max-width: 100%;
     }
 }
