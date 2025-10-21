@@ -31,14 +31,22 @@ body {
     margin-bottom: 20px;
 }
 
-/* ... (resto de .grid-item y otros estilos sin cambios) ... */
 
-/* Estilos para pantallas más pequeñas (Mantener esta sección, aunque ya no sea tan crítica) */
+
+/* Estilos para pantallas más pequeñas */
 @media (max-width: 550px) {
     #grid-container {
-        /* Aunque ya está arriba, aseguramos la máxima ocupación en móvil */
         max-width: 100%;
-        /* 🔑 Opcional: Si los márgenes internos lo hacen ver muy grande, puedes forzarlo aquí */
-        /* width: calc(100% - 20px); */ 
+    }
+    
+    /* 🔑 AJUSTE CLAVE: Reducimos la altura de los recuadros en móviles */
+    .grid-item {
+        /* Cambiamos la relación de aspecto de 4/3 (más cuadrada) */
+        /* a 5/3 (más rectangular horizontal) para hacer la cuadrícula más compacta */
+        aspect-ratio: 5 / 3; 
+        
+        /* Reducimos el padding vertical si es necesario */
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 }
