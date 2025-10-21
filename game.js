@@ -9,16 +9,16 @@ const ALL_PUZZLES = [
     { "category": "Cosas que es Laura", "words": ["Pasada", "Extrovertida", "Divertida", "Consentida"], "difficulty": 0, "color": "yellow" },
     { "category": "Cosas que Jorge quiere hacer con Laura", "words": ["Besar", "Abrazar", "Conversar", "Mirar"], "difficulty": 0, "color": "yellow" },
     { "category": "Cosas que le gustan a Laura", "words": ["Cerveza", "Margarita", "Jorge", "Piña Colada"], "difficulty": 0, "color": "yellow" },
-    { "category": "Animales Domésticos", "words": ["Lauraa", "Gato", "Hámster", "Conejo"], "difficulty": 0, "color": "yellow" },
-    { "category": "Términos de Cocina", "words": ["Lauraa", "Asar", "Rehogar", "Freír"], "difficulty": 0, "color": "yellow" },
-    { "category": "Herramientas Básicas", "words": ["Lauraa", "Clavo", "Tornillo", "Destornillador"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que le gustan a Laura", "words": ["Pilates", "Beber", "Sushi", "Flores"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que no le gustan a Laura", "words": ["Coco", "Guanábana", "Correr", "Besos en el codo"], "difficulty": 0, "color": "yellow" },
+    { "category": "Cosas que NO es Laura", "words": ["Horrible", "Plebeya", "Vulgar", "Común"], "difficulty": 0, "color": "yellow" },
     
     // --- Dificultad 1 (Verde) ---
-    { "category": "Mamíferos Grandes", "words": ["Elefante", "Ballena", "Rinoceronte", "Hipopótamo"], "difficulty": 1, "color": "green" },
-    { "category": "Homófonas Comunes", "words": ["Vaca", "Baca", "Ola", "Hola"], "difficulty": 1, "color": "green" },
-    { "category": "Términos Musicales", "words": ["Corchea", "Semicorchea", "Fusa", "Semifusa"], "difficulty": 1, "color": "green" },
-    { "category": "Monstruos Griegos", "words": ["Medusa", "Cíclope", "Minotauro", "Hidra"], "difficulty": 1, "color": "green" },
-    { "category": "Conceptos Financieros", "words": ["Bono", "Acción", "Dividendo", "Rendimiento"], "difficulty": 1, "color": "green" },
+    { "category": "Soundtrack de tu y yo", "words": ["Fuego", "Tan Bien", "Estar Contigo", "Tanto"], "difficulty": 1, "color": "green" },
+    { "category": "Soundtrack de tu y yo", "words": ["Tal Como Eres", "Millones", "Miel", "Musica"], "difficulty": 1, "color": "green" },
+    { "category": "Soundtrack de tu y yo", "words": ["Pelinegra", "El Ingeniero", "Carita Linda", "Magic"], "difficulty": 1, "color": "green" },
+    { "category": "Soundtrack de tu y yo", "words": ["Bésame", "Las Estrellas", "Espacio Sideral", "Tears"], "difficulty": 1, "color": "green" },
+    { "category": "La persona favorita de Jorge", "words": ["Laura", "Laura", "Laura", "Laura"], "difficulty": 1, "color": "green" },
     { "category": "Tipos de Energía", "words": ["Eólica", "Solar", "Nuclear", "Hidráulica"], "difficulty": 1, "color": "green" },
     { "category": "Elementos de la Tabla Periódica (metales)", "words": ["Oro", "Plata", "Cobre", "Hierro"], "difficulty": 1, "color": "green" },
     { "category": "Profesiones del Arte", "words": ["Pintor", "Escultor", "Músico", "Dramaturgo"], "difficulty": 1, "color": "green" },
@@ -26,8 +26,8 @@ const ALL_PUZZLES = [
     { "category": "Tipos de Nubes", "words": ["Cirro", "Estrato", "Cúmulo", "Nimbo"], "difficulty": 1, "color": "green" },
     
     // --- Dificultad 2 (Azul) ---
-    { "category": "Marcas de Moda de Lujo", "words": ["Chanel", "Gucci", "Prada", "Dior"], "difficulty": 2, "color": "blue" },
-    { "category": "Personajes de Shakespeare", "words": ["Hamlet", "Romeo", "Julieta", "Macbeth"], "difficulty": 2, "color": "blue" },
+    { "category": "Maya", "words": ["Mayonesa", "Gorda Bachicha", "Mayúscula", "Maya"], "difficulty": 2, "color": "blue" },
+    { "category": "Citas en palabras clave", "words": ["Sushi", "Novia", "Karaoke", "Papas Fritas"], "difficulty": 2, "color": "blue" },
     { "category": "Tipos de Sustancias", "words": ["Gas", "Líquido", "Sólido", "Plasma"], "difficulty": 2, "color": "blue" },
     { "category": "Términos de Ajedrez", "words": ["Peón", "Torre", "Caballo", "Alfil"], "difficulty": 2, "color": "blue" },
     { "category": "Tipos de Barcos", "words": ["Yate", "Galeón", "Fragata", "Goleta"], "difficulty": 2, "color": "blue" },
@@ -349,6 +349,7 @@ function shuffleArray(array) {
     }
     return array;
 }
+
 
 
 
