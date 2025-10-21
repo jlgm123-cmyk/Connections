@@ -186,7 +186,7 @@ p {
 /* Estado INACTIVO */
 #submit-button:disabled {
     background-color: #dcdcdc;
-    color: #888888;          
+    color: #444444;          
     border-color: #dcdcdc;
     cursor: not-allowed;
 }
@@ -288,3 +288,4 @@ p {
         font-size: 0.9rem;
     }
 }
+
