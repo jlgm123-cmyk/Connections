@@ -2,16 +2,16 @@
 const ALL_PUZZLES = [
     
     // --- Dificultad 0 (Amarillo) ---
-    { "category": "Instrumentos de Cuerda", "words": ["Guitarra", "Violín", "Arpa", "Ukelele"], "difficulty": 0, "color": "yellow" },
-    { "category": "Sinónimos de 'Fácil'", "words": ["Simple", "Sencillo", "Elemental", "Básico"], "difficulty": 0, "color": "yellow" },
-    { "category": "Verbos de Movimiento", "words": ["Correr", "Saltar", "Caminar", "Volar"], "difficulty": 0, "color": "yellow" },
-    { "category": "Partes de la Cara", "words": ["Nariz", "Boca", "Ojo", "Oreja"], "difficulty": 0, "color": "yellow" },
-    { "category": "Unidades de Tiempo", "words": ["Segundo", "Minuto", "Hora", "Día"], "difficulty": 0, "color": "yellow" },
-    { "category": "Tipos de Café", "words": ["Expreso", "Latte", "Capuchino", "Americano"], "difficulty": 0, "color": "yellow" },
-    { "category": "Colores Primarios", "words": ["Rojo", "Azul", "Amarillo", "Verde"], "difficulty": 0, "color": "yellow" },
-    { "category": "Animales Domésticos", "words": ["Perro", "Gato", "Hámster", "Conejo"], "difficulty": 0, "color": "yellow" },
-    { "category": "Términos de Cocina", "words": ["Hervir", "Asar", "Rehogar", "Freír"], "difficulty": 0, "color": "yellow" },
-    { "category": "Herramientas Básicas", "words": ["Martillo", "Clavo", "Tornillo", "Destornillador"], "difficulty": 0, "color": "yellow" },
+    { "category": "Instrumentos de Cuerda", "words": ["Laura", "Violín", "Arpa", "Ukelele"], "difficulty": 0, "color": "yellow" },
+    { "category": "Sinónimos de 'Fácil'", "words": ["Laura", "Sencillo", "Elemental", "Básico"], "difficulty": 0, "color": "yellow" },
+    { "category": "Verbos de Movimiento", "words": ["Laura", "Saltar", "Caminar", "Volar"], "difficulty": 0, "color": "yellow" },
+    { "category": "Partes de la Cara", "words": ["Laura", "Boca", "Ojo", "Oreja"], "difficulty": 0, "color": "yellow" },
+    { "category": "Unidades de Tiempo", "words": ["Laura", "Minuto", "Hora", "Día"], "difficulty": 0, "color": "yellow" },
+    { "category": "Tipos de Café", "words": ["Laura", "Latte", "Capuchino", "Americano"], "difficulty": 0, "color": "yellow" },
+    { "category": "Colores Primarios", "words": ["Laura", "Azul", "Amarillo", "Verde"], "difficulty": 0, "color": "yellow" },
+    { "category": "Animales Domésticos", "words": ["Laura", "Gato", "Hámster", "Conejo"], "difficulty": 0, "color": "yellow" },
+    { "category": "Términos de Cocina", "words": ["Laura", "Asar", "Rehogar", "Freír"], "difficulty": 0, "color": "yellow" },
+    { "category": "Herramientas Básicas", "words": ["Laura", "Clavo", "Tornillo", "Destornillador"], "difficulty": 0, "color": "yellow" },
     
     // --- Dificultad 1 (Verde) ---
     { "category": "Mamíferos Grandes", "words": ["Elefante", "Ballena", "Rinoceronte", "Hipopótamo"], "difficulty": 1, "color": "green" },
@@ -349,3 +349,4 @@ function shuffleArray(array) {
     }
     return array;
 }
+
