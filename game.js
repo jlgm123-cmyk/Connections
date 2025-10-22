@@ -60,9 +60,9 @@ const ALL_PUZZLES = [
     { "category": "Rimas de cosas que es Laura", "words": ["Mariposa", "Ilesa", "Botella", "Colita"], "difficulty": 3, "color": "purple" },
     { "category": "Rimas de cosas que es Laura", "words": ["Peligrosa", "Represa", "Aquella", "Dinamita"], "difficulty": 3, "color": "purple" },
     { "category": "Rimas de cosas que es Laura", "words": ["Dichosa", "Sorpresa", "Huella", "Medita"], "difficulty": 3, "color": "purple" },
-    { "category": "Empieza por las primeras letras de nuestra fecha especial", "words": ["Octavo", "Diesel", "Decidir", "Octágono"], "difficulty": 3, "color": "purple" },
-    
-   
+    { "category": "Empieza por las primeras letras de nuestra fecha especial", "words": ["Octavo", "Diesel", "Diente", "Octágono"], "difficulty": 3, "color": "purple" },
+    { "category": "Cosas que son lo mismo", "words": ["Cocuy", "Tequila", "Mezcal", "Comiteco"], "difficulty": 3, "color": "purple" },    
+    { "category": "Empieza por las primeras letras de nuestra fecha especial", "words": ["Octavo", "Diesel", "Diente", "Octágono"], "difficulty": 3, "color": "purple" },   
 ];
 
 // --- ESTADO DEL JUEGO y REFERENCIAS AL DOM ---
@@ -356,6 +356,7 @@ function shuffleArray(array) {
     }
     return array;
 }
+
 
 
 
