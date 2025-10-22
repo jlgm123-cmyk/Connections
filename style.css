@@ -230,15 +230,30 @@ p {
     height: 15px;
 }
 
-#close-modal {
+/* 🔑 NUEVO: Estilos para el contenedor de botones del modal */
+#modal-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#modal-controls button {
     font-size: 1rem;
     font-weight: 600;
     padding: 12px 20px;
     border-radius: 30px;
     border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: #efefe6; /* Gris claro por defecto */
+    color: #121212;
+}
+
+/* Resaltar el botón de reinicio */
+#reset-game-button {
     background-color: #121212;
     color: white;
-    cursor: pointer;
 }
 
 /* AJUSTES ULTRA-COMPACTOS PARA MÓVILES */
@@ -286,5 +301,14 @@ p {
     .solved-group {
         padding: 8px;
         font-size: 0.9rem;
+    }
+    
+    /* Ajuste de botones en móvil */
+    #modal-controls {
+        gap: 10px;
+    }
+    #modal-controls button {
+        padding: 10px 15px;
+        font-size: 0.85rem;
     }
 }
