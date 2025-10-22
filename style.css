@@ -49,9 +49,9 @@ p {
     text-transform: uppercase;
     
     display: flex;
-    align-items: center; /* Centrado Vertical */
-    justify-content: center; /* Centrado Horizontal */
-    text-align: center; /* Centrado de texto multilínea */
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
     
     white-space: normal; 
     overflow-wrap: break-word; 
@@ -59,7 +59,7 @@ p {
     
     line-height: 1.2;
     
-    aspect-ratio: 4 / 3; /* Uniformidad de tamaño */
+    aspect-ratio: 4 / 3; 
     min-height: 50px; 
 }
 
@@ -176,17 +176,17 @@ p {
     background-color: #efefe6;
 }
 
-/* Estado ACTIVO: Fondo CLARO, Texto NEGRO (SOLUCIÓN FINAL) */
-#submit-button {
+/* SOLUCIÓN CRÍTICA: Estado ACTIVO (Texto Negro sobre Fondo Claro) */
+#submit-button:not([disabled]) {
     background-color: #f9df6d; 
     color: #121212; 
     border-color: #f9df6d; 
 }
 
-/* Estado INACTIVO */
+/* Estado INACTIVO (Se aplica solo cuando está deshabilitado) */
 #submit-button:disabled {
     background-color: #dcdcdc;
-    color: #444444;          
+    color: #888888; 
     border-color: #dcdcdc;
     cursor: not-allowed;
 }
@@ -288,4 +288,3 @@ p {
         font-size: 0.9rem;
     }
 }
-
