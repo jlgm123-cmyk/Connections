@@ -26,6 +26,7 @@ const ALL_PUZZLES = [
     { "category": "Maya", "words": ["Mayonesa", "Gorda Bachicha", "Mayúscula", "Maya"], "difficulty": 1, "color": "green" },
     { "category": "Apodos de Laura en Anagrama", "words": ["Roma", "Haremos", "Escarpio", "Nidal"], "difficulty": 1, "color": "green" },
     { "category": "Te Amo Laura Emilia", "words": ["Te", "Amo", "Laura", "Emilia"], "difficulty": 1, "color": "green" },
+    { "category": "Disfraces de Laura", "words": ["Duo", "Bruja", "Espantapájaros", "Bad Bunny"], "difficulty": 1, "color": "green" },
 
     
     // --- Dificultad 2 (Azul) ---
@@ -56,6 +57,11 @@ const ALL_PUZZLES = [
     { "category": "Laura le sabe y Jorge no", "words": ["Bailar", "Puchero", "Inglés", "Caída"], "difficulty": 3, "color": "purple" },
     { "category": "Laura sin una letra", "words": ["Aura", "Nova", "Parea", "Amo"], "difficulty": 3, "color": "purple" },
     { "category": "Anagramas de cosas que no le gustan a Laura", "words": ["Paso", "Tufar", "Solo Obedecen", "Suba el pico sur"], "difficulty": 3, "color": "purple" },
+    { "category": "Rimas de cosas que es Laura", "words": ["Mariposa", "Ilesa", "Botella", "Colita"], "difficulty": 3, "color": "purple" },
+    { "category": "Rimas de cosas que es Laura", "words": ["Peligrosa", "Represa", "Aquella", "Dinamita"], "difficulty": 3, "color": "purple" },
+    { "category": "Rimas de cosas que es Laura", "words": ["Dichosa", "Sorpresa", "Huella", "Medita"], "difficulty": 3, "color": "purple" },
+    { "category": "Empieza por las primeras letras de nuestra fecha especial", "words": ["Octavo", "Diesel", "Decidir", "Octágono"], "difficulty": 3, "color": "purple" },
+    
    
 ];
 
@@ -350,6 +356,7 @@ function shuffleArray(array) {
     }
     return array;
 }
+
 
 
 
