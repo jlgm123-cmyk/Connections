@@ -54,8 +54,8 @@ const ALL_PUZZLES = [
     
     // --- Dificultad 3 (Morado) ---
     { "category": "Laura le sabe y Jorge no", "words": ["Bailar", "Puchero", "Inglés", "Caída"], "difficulty": 3, "color": "purple" },
-    { "category": "Palabras que son Palíndromos", "words": ["Radar", "Sometemos", "Reconocer", "Ataque"], "difficulty": 3, "color": "purple" },
-    { "category": "Artistas del Renacimiento (Tortugas Ninja)", "words": ["Rafael", "Miguel Ángel", "Leonardo", "Donatello"], "difficulty": 3, "color": "purple" },
+    { "category": "Laura sin una letra", "words": ["Aura", "Nova", "Parea", "Amo"], "difficulty": 3, "color": "purple" },
+    { "category": "Anagramas de cosas que no le gustan a Laura", "words": ["Paso", "Tufar", "Solo Obedecen", "Suba el pico sur"], "difficulty": 3, "color": "purple" },
     { "category": "Unidades de Medida Antiguas", "words": ["Codo", "Pie", "Pulgada", "Braza"], "difficulty": 3, "color": "purple" },
     { "category": "Lenguajes de Programación", "words": ["Python", "Java", "C++", "Ruby"], "difficulty": 3, "color": "purple" },
     { "category": "Órganos Internos (Poco Comunes)", "words": ["Bazo", "Páncreas", "Hígado", "Riñón"], "difficulty": 3, "color": "purple" },
