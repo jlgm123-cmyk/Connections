@@ -30,18 +30,30 @@ const ALL_PUZZLES = [
     
     // --- Dificultad 2 (Azul) ---
     { "category": "Canciones por categoría", "words": ["Love Someone", "Todo Cambió", "Mala Conducta", "La travesía"], "difficulty": 2, "color": "blue" },
+
     { "category": "Citas en palabras clave", "words": ["Sushi", "Novia", "Karaoke", "Papas Fritas"], "difficulty": 2, "color": "blue" },
-    { "category": "Tipos de Sustancias", "words": ["Gas", "Líquido", "Sólido", "Plasma"], "difficulty": 2, "color": "blue" },
-    { "category": "Términos de Ajedrez", "words": ["Peón", "Torre", "Caballo", "Alfil"], "difficulty": 2, "color": "blue" },
-    { "category": "Tipos de Barcos", "words": ["Yate", "Galeón", "Fragata", "Goleta"], "difficulty": 2, "color": "blue" },
-    { "category": "Palabras con Tilde Diacrítica", "words": ["Tú", "Él", "Mí", "Sí"], "difficulty": 2, "color": "blue" },
-    { "category": "Dioses Romanos", "words": ["Júpiter", "Marte", "Venus", "Neptuno"], "difficulty": 2, "color": "blue" },
+
+    { "category": "Vision Board de Laura 2025", "words": ["Teléfono", "Trabajo", "Pareja", "Perro"], "difficulty": 2, "color": "blue" },
+
+    { "category": "Quieres ser mi novia?", "words": ["Quieres", "Ser", "Mi", "Novia"], "difficulty": 2, "color": "blue" },
+
+    { "category": "2 palabra en canciones de Alleh y Yorghaki", "words": ["Ciudad", "Noche", "Radio", "Late"], "difficulty": 2, "color": "blue" },
+
+    { "category": "Primera palabra en juegos que hemos jugado juntos", "words": ["Exploding", "Them", "Venn", "Villainous"], "difficulty": 2, "color": "blue" },
+
+    { "category": "Empieza por Lau", "words": ["Laurel", "Laúd", "Laugh", "Launch"], "difficulty": 2, "color": "blue" },
+
     { "category": "Personajes de Videojuegos (Nintendo)", "words": ["Mario", "Link", "Zelda", "Master Chief"], "difficulty": 2, "color": "blue" },
-    { "category": "Instrumentos de Percusión", "words": ["Bombo", "Caja", "Platillo", "Timbal"], "difficulty": 2, "color": "blue" },
-    { "category": "Peces Comunes", "words": ["Salmón", "Atún", "Merluza", "Tilapia"], "difficulty": 2, "color": "blue" },
+
+    { "category": "Profesores de Laura en palabras clave", "words": ["Gordo", "Novio", "Bipolar", "Padrino"], "difficulty": 2, "color": "blue" },
+
+    { "category": "Emojis que ha tenido Laura en el contacto de Jorge", "words": ["Uñas", "Impresora", "Corazones", "Casco"], "difficulty": 2, "color": "blue" },
+
+
+
     
     // --- Dificultad 3 (Morado) ---
-    { "category": "Laura le sabe y Jorge no", "words": ["Bailar", "Oslo", "Tokio", "París"], "difficulty": 3, "color": "purple" },
+    { "category": "Laura le sabe y Jorge no", "words": ["Bailar", "Puchero", "Inglés", "Caída"], "difficulty": 3, "color": "purple" },
     { "category": "Palabras que son Palíndromos", "words": ["Radar", "Sometemos", "Reconocer", "Ataque"], "difficulty": 3, "color": "purple" },
     { "category": "Artistas del Renacimiento (Tortugas Ninja)", "words": ["Rafael", "Miguel Ángel", "Leonardo", "Donatello"], "difficulty": 3, "color": "purple" },
     { "category": "Unidades de Medida Antiguas", "words": ["Codo", "Pie", "Pulgada", "Braza"], "difficulty": 3, "color": "purple" },
