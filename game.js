@@ -43,7 +43,7 @@ const ALL_PUZZLES = [
 
     { "category": "Empieza por Lau", "words": ["Laurel", "Laúd", "Laugh", "Launch"], "difficulty": 2, "color": "blue" },
 
-    { "category": "Personajes de Videojuegos (Nintendo)", "words": ["Mario", "Link", "Zelda", "Master Chief"], "difficulty": 2, "color": "blue" },
+    
 
     { "category": "Profesores de Laura en palabras clave", "words": ["Gordo", "Novio", "Bipolar", "Padrino"], "difficulty": 2, "color": "blue" },
 
@@ -56,13 +56,7 @@ const ALL_PUZZLES = [
     { "category": "Laura le sabe y Jorge no", "words": ["Bailar", "Puchero", "Inglés", "Caída"], "difficulty": 3, "color": "purple" },
     { "category": "Laura sin una letra", "words": ["Aura", "Nova", "Parea", "Amo"], "difficulty": 3, "color": "purple" },
     { "category": "Anagramas de cosas que no le gustan a Laura", "words": ["Paso", "Tufar", "Solo Obedecen", "Suba el pico sur"], "difficulty": 3, "color": "purple" },
-    { "category": "Unidades de Medida Antiguas", "words": ["Codo", "Pie", "Pulgada", "Braza"], "difficulty": 3, "color": "purple" },
-    { "category": "Lenguajes de Programación", "words": ["Python", "Java", "C++", "Ruby"], "difficulty": 3, "color": "purple" },
-    { "category": "Órganos Internos (Poco Comunes)", "words": ["Bazo", "Páncreas", "Hígado", "Riñón"], "difficulty": 3, "color": "purple" },
-    { "category": "Palabras que Terminan en Vocal Tónica", "words": ["Café", "Bambú", "Maní", "Dominó"], "difficulty": 3, "color": "purple" },
-    { "category": "Teóricos de la Filosofía", "words": ["Platón", "Kant", "Nietzsche", "Sócrates"], "difficulty": 3, "color": "purple" },
-    { "category": "Instrumentos Musicales Raros", "words": ["Didgeridoo", "Theremin", "Oud", "Zampoña"], "difficulty": 3, "color": "purple" },
-    { "category": "Personajes de Mitología Nórdica", "words": ["Odín", "Thor", "Loki", "Freyja"], "difficulty": 3, "color": "purple" }
+   
 ];
 
 // --- ESTADO DEL JUEGO y REFERENCIAS AL DOM ---
