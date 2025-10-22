@@ -117,11 +117,11 @@ function initializeGame() {
         gridContainer.appendChild(item);
     });
 
-    // 🔑 LLAMADA CLAVE: Aplicar la reducción de fuente después de crear los elementos
+    // Aplicar la reducción de fuente después de crear los elementos
     applyTextScaling(); 
 }
 
-// --- LÓGICA DE REDUCCIÓN DE FUENTE (NUEVA FUNCIÓN) ---
+// --- LÓGICA DE REDUCCIÓN DE FUENTE (Ajuste de texto) ---
 
 function applyTextScaling() {
     const gridItems = gridContainer.querySelectorAll('.grid-item');
@@ -129,8 +129,7 @@ function applyTextScaling() {
     gridItems.forEach(item => {
         const word = item.textContent.toUpperCase();
         
-        // 🔑 Definimos un umbral: si la palabra tiene 11 caracteres o más
-        // o si tiene 3 o más palabras (contando espacios como separador)
+        // Aplica la clase .shrink-text si la palabra es muy larga (>= 11 caracteres)
         const isLongWord = word.length >= 11;
         const hasManyWords = word.split(' ').length >= 3;
         
@@ -138,13 +137,10 @@ function applyTextScaling() {
             item.classList.add('shrink-text');
         }
     });
-
-    // Se puede refinar este umbral (ej. 14 para palabras sin espacios, 11 para frases)
-    // Para palabras como "Destornillador" (14), se aplicará la reducción.
-    // Para palabras como "Master Chief" (2), se aplicará la reducción si tiene 3 o más palabras.
 }
 
-// --- LÓGICA DE SELECCIÓN Y JUEGO (Resto de funciones sin cambios) ---
+
+// --- LÓGICA DE JUEGO ---
 
 function selectRandomPuzzle() {
     const selectedGroups = [];
@@ -153,8 +149,7 @@ function selectRandomPuzzle() {
         const difficultyPuzzles = ALL_PUZZLES.filter(p => p.difficulty === i);
         
         if (difficultyPuzzles.length === 0) {
-            console.error(`Faltan categorías en ALL_PUZZLES: No hay puzzles para la dificultad ${i}.`);
-            return null; 
+            return null;
         }
         
         const randomIndex = Math.floor(Math.random() * difficultyPuzzles.length);
@@ -182,6 +177,8 @@ function onItemClick(item) {
 
 shuffleButton.addEventListener('click', shuffleGrid);
 submitButton.addEventListener('click', handleSubmit);
+
+// 🔑 CLAVE: El botón cierra el modal y reinicia el juego.
 closeModalButton.addEventListener('click', initializeGame);
 
 function updateSubmitButton() {
@@ -220,19 +217,23 @@ function findMatchingGroup(words) {
     });
 }
 
+// 🔑 MODIFICACIÓN: La función ahora simplemente añade el grupo al final del contenedor.
 function revealGroup(group) {
     const groupElement = document.createElement('div');
     groupElement.classList.add('solved-group');
     
     const colorClass = `difficulty-${group.color}`;
     groupElement.classList.add(colorClass);
+    // Mantenemos el dato de dificultad para el historial de color en el modal
+    groupElement.dataset.difficulty = group.difficulty; 
 
     groupElement.innerHTML = `
         <h3>${group.category}</h3>
         <p>${group.words.join(', ')}</p>
     `;
 
-    insertSorted(groupElement, group.difficulty);
+    // 🔑 CLAVE: Se añade el grupo al final para mantener el orden de acierto
+    solvedContainer.appendChild(groupElement); 
 
     const gridItems = gridContainer.querySelectorAll('.grid-item');
     gridItems.forEach(item => {
@@ -245,21 +246,7 @@ function revealGroup(group) {
     updateSubmitButton();
 }
 
-function insertSorted(element, difficulty) {
-    element.dataset.difficulty = difficulty;
-    let inserted = false;
-    const children = solvedContainer.children;
-    for (let i = 0; i < children.length; i++) {
-        if (parseInt(children[i].dataset.difficulty) > difficulty) {
-            solvedContainer.insertBefore(element, children[i]);
-            inserted = true;
-            break;
-        }
-    }
-    if (!inserted) {
-        solvedContainer.appendChild(element);
-    }
-}
+// ❌ Se elimina la función insertSorted, ya no es necesaria.
 
 
 function handleMistake() {
@@ -306,7 +293,6 @@ function shuffleGrid() {
 
     gridContainer.innerHTML = '';
     shuffledActiveItems.forEach(item => gridContainer.appendChild(item));
-    // Es importante re-aplicar la escala al reordenar si el tamaño dependiera del ancho (pero con grid no es necesario)
 }
 
 function endGame(won) {
@@ -315,13 +301,12 @@ function endGame(won) {
 
     if (!won) {
         modalTitle.textContent = 'Casi...';
-        currentPuzzle.groups.forEach(group => {
-            let isSolved = false;
-            solvedContainer.querySelectorAll('h3').forEach(h3 => {
-                if (h3.textContent === group.category) isSolved = true;
-            });
+        
+        // Mostrar los grupos no resueltos, siguiendo el orden de dificultad (tradicional)
+        const solvedCategories = Array.from(solvedContainer.querySelectorAll('h3')).map(h3 => h3.textContent);
 
-            if (!isSolved) {
+        currentPuzzle.groups.forEach(group => {
+            if (!solvedCategories.includes(group.category)) {
                 const groupElement = document.createElement('div');
                 groupElement.classList.add('solved-group');
                 const colorClass = `difficulty-${group.color}`;
@@ -331,7 +316,8 @@ function endGame(won) {
                     <h3>${group.category}</h3>
                     <p>${group.words.join(', ')}</p>
                 `;
-                insertSorted(groupElement, group.difficulty);
+                // Añadir al final del solvedContainer para que el usuario vea la solución completa
+                solvedContainer.appendChild(groupElement);
             }
         });
     } else {
@@ -339,11 +325,12 @@ function endGame(won) {
     }
 
 
-    // Muestra el historial de colores en el modal
+    // 🔑 CLAVE: Muestra el historial de colores en el modal, leyendo los elementos en el orden en que fueron añadidos
     solvedContainer.querySelectorAll('.solved-group').forEach(group => {
         const square = document.createElement('div');
         square.classList.add('result-square');
-        square.style.backgroundColor = difficultyColors[group.dataset.difficulty];
+        // El dataset.difficulty se mantiene y se usa para mapear al color correcto
+        square.style.backgroundColor = difficultyColors[group.dataset.difficulty]; 
         modalResults.appendChild(square);
     });
 }
