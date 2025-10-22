@@ -75,9 +75,11 @@ const submitButton = document.getElementById('submit-button');
 const modal = document.getElementById('modal');
 const modalTitle = document.getElementById('modal-title');
 const modalResults = document.getElementById('modal-results');
-const closeModalButton = document.getElementById('close-modal');
+// 🔑 CAMBIO: Nuevas referencias a los botones del modal
+const viewBoardButton = document.getElementById('view-board-button');
+const resetGameButton = document.getElementById('reset-game-button');
 
-// --- FUNCIÓN PRINCIPAL DE INICIALIZACIÓN ---
+// --- LÓGICA DE INICIALIZACIÓN ---
 
 document.addEventListener('DOMContentLoaded', initializeGame);
 
@@ -121,7 +123,21 @@ function initializeGame() {
     applyTextScaling(); 
 }
 
-// --- LÓGICA DE REDUCCIÓN DE FUENTE (Ajuste de texto) ---
+// --- LÓGICA DE EVENTOS ---
+
+shuffleButton.addEventListener('click', shuffleGrid);
+submitButton.addEventListener('click', handleSubmit);
+
+// 🔑 CLAVE: Eventos de los nuevos botones del modal
+viewBoardButton.addEventListener('click', () => {
+    // Solo cierra el modal para ver la solución
+    modal.classList.add('hidden');
+});
+
+resetGameButton.addEventListener('click', initializeGame);
+
+
+// --- RESTO DE LA LÓGICA DEL JUEGO (sin cambios funcionales en revealGroup y endGame) ---
 
 function applyTextScaling() {
     const gridItems = gridContainer.querySelectorAll('.grid-item');
@@ -129,7 +145,6 @@ function applyTextScaling() {
     gridItems.forEach(item => {
         const word = item.textContent.toUpperCase();
         
-        // Aplica la clase .shrink-text si la palabra es muy larga (>= 11 caracteres)
         const isLongWord = word.length >= 11;
         const hasManyWords = word.split(' ').length >= 3;
         
@@ -139,8 +154,6 @@ function applyTextScaling() {
     });
 }
 
-
-// --- LÓGICA DE JUEGO ---
 
 function selectRandomPuzzle() {
     const selectedGroups = [];
@@ -175,11 +188,6 @@ function onItemClick(item) {
     feedbackArea.textContent = '';
 }
 
-shuffleButton.addEventListener('click', shuffleGrid);
-submitButton.addEventListener('click', handleSubmit);
-
-// 🔑 CLAVE: El botón cierra el modal y reinicia el juego.
-closeModalButton.addEventListener('click', initializeGame);
 
 function updateSubmitButton() {
     submitButton.disabled = selectedWords.length !== 4;
@@ -217,14 +225,12 @@ function findMatchingGroup(words) {
     });
 }
 
-// 🔑 MODIFICACIÓN: La función ahora simplemente añade el grupo al final del contenedor.
 function revealGroup(group) {
     const groupElement = document.createElement('div');
     groupElement.classList.add('solved-group');
     
     const colorClass = `difficulty-${group.color}`;
     groupElement.classList.add(colorClass);
-    // Mantenemos el dato de dificultad para el historial de color en el modal
     groupElement.dataset.difficulty = group.difficulty; 
 
     groupElement.innerHTML = `
@@ -232,7 +238,6 @@ function revealGroup(group) {
         <p>${group.words.join(', ')}</p>
     `;
 
-    // 🔑 CLAVE: Se añade el grupo al final para mantener el orden de acierto
     solvedContainer.appendChild(groupElement); 
 
     const gridItems = gridContainer.querySelectorAll('.grid-item');
@@ -245,8 +250,6 @@ function revealGroup(group) {
     selectedWords = [];
     updateSubmitButton();
 }
-
-// ❌ Se elimina la función insertSorted, ya no es necesaria.
 
 
 function handleMistake() {
@@ -302,7 +305,7 @@ function endGame(won) {
     if (!won) {
         modalTitle.textContent = 'Casi...';
         
-        // Mostrar los grupos no resueltos, siguiendo el orden de dificultad (tradicional)
+        // Revelar grupos no resueltos
         const solvedCategories = Array.from(solvedContainer.querySelectorAll('h3')).map(h3 => h3.textContent);
 
         currentPuzzle.groups.forEach(group => {
@@ -316,20 +319,22 @@ function endGame(won) {
                     <h3>${group.category}</h3>
                     <p>${group.words.join(', ')}</p>
                 `;
-                // Añadir al final del solvedContainer para que el usuario vea la solución completa
+                // Añadir al final para completar la solución
                 solvedContainer.appendChild(groupElement);
             }
         });
+        
+        // Cambiar el texto del botón principal en caso de pérdida
+        viewBoardButton.textContent = "Ver Solución"; 
     } else {
         modalTitle.textContent = '¡Felicidades!';
+        viewBoardButton.textContent = "Ver Tablero";
     }
 
-
-    // 🔑 CLAVE: Muestra el historial de colores en el modal, leyendo los elementos en el orden en que fueron añadidos
+    // Muestra el historial de colores en el modal
     solvedContainer.querySelectorAll('.solved-group').forEach(group => {
         const square = document.createElement('div');
         square.classList.add('result-square');
-        // El dataset.difficulty se mantiene y se usa para mapear al color correcto
         square.style.backgroundColor = difficultyColors[group.dataset.difficulty]; 
         modalResults.appendChild(square);
     });
@@ -345,7 +350,6 @@ function shuffleArray(array) {
     }
     return array;
 }
-
 
 
 
