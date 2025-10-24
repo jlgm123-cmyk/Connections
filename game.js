@@ -12,6 +12,7 @@ const ALL_PUZZLES = [
     { "category": "Cosas que le gustan a Laura", "words": ["Pilates", "Beber", "Sushi", "Flores"], "difficulty": 0, "color": "yellow" },
     { "category": "Cosas que NO le gustan a Laura", "words": ["Coco", "Guanábana", "Correr", "Vallenato"], "difficulty": 0, "color": "yellow" },
     { "category": "Cosas que NO es Laura", "words": ["Horrible", "Plebeya", "Vulgar", "Común"], "difficulty": 0, "color": "yellow" },
+    { "category": "Hasta cuando quiero con Laura", "words": ["Para", "Toda", "La", "Vida"], "difficulty": 0, "color": "yellow" },
 
     
     // --- Dificultad 1 (Verde) ---
@@ -44,8 +45,6 @@ const ALL_PUZZLES = [
 
     { "category": "Empieza por Lau", "words": ["Laurel", "Laúd", "Laugh", "Launch"], "difficulty": 2, "color": "blue" },
 
-    
-
     { "category": "Profesores de Laura en palabras clave", "words": ["Gordo", "Novio", "Bipolar", "Padrino"], "difficulty": 2, "color": "blue" },
 
     { "category": "Emojis que ha tenido Laura en el contacto de Jorge", "words": ["Uñas", "Impresora", "Corazones", "Casco"], "difficulty": 2, "color": "blue" },
@@ -62,7 +61,7 @@ const ALL_PUZZLES = [
     { "category": "Rimas de cosas que es Laura", "words": ["Dichosa", "Sorpresa", "Huella", "Medita"], "difficulty": 3, "color": "purple" },
     { "category": "Empieza por las primeras letras de nuestra fecha especial", "words": ["Octavo", "Diesel", "Diente", "Octágono"], "difficulty": 3, "color": "purple" },
     { "category": "Cosas que son lo mismo", "words": ["Cocuy", "Tequila", "Mezcal", "Comiteco"], "difficulty": 3, "color": "purple" },    
-    { "category": "Empieza por las primeras letras de nuestra fecha especial", "words": ["Octavo", "Diesel", "Diente", "Octágono"], "difficulty": 3, "color": "purple" },   
+    { "category": "EL proyecto de Laura", "words": ["Incompleto", "Colapso", "1/4", "Falla"], "difficulty": 3, "color": "purple" },   
 ];
 
 // --- ESTADO DEL JUEGO y REFERENCIAS AL DOM ---
@@ -356,6 +355,7 @@ function shuffleArray(array) {
     }
     return array;
 }
+
 
 
 
